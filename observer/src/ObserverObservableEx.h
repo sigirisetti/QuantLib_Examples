@@ -1,0 +1,9 @@
+//
+// Created by appuprakhya on 4/9/22.
+//
+
+#ifndef QUANTLIB_EXAMPLES_OBSERVEROBSERVABLEEX_H
+void observer_test();
+#define QUANTLIB_EXAMPLES_OBSERVEROBSERVABLEEX_H
+
+#endif //QUANTLIB_EXAMPLES_OBSERVEROBSERVABLEEX_H

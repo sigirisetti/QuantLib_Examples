@@ -1,0 +1,2 @@
+add_library(observer ObserverObservableEx.cpp)
+target_include_directories(observer INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})

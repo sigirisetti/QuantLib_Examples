@@ -1,0 +1,5 @@
+add_library(EqEuropeanOption EuropeanOption.cpp)
+
+target_link_libraries(EqEuropeanOption QuantLib)
+
+target_include_directories(EqEuropeanOption INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
