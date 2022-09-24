@@ -7,22 +7,31 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 
+#find_package(Boost ${QL_BOOST_VERSION} COMPONENTS ALL)
+
 ### Add source sub directories or modules
+add_subdirectory(QL_Basics)
+add_subdirectory(QL_Macro)
+
 add_subdirectory(DateTime)
 add_subdirectory(observer)
-add_subdirectory(QL_Macro)
 add_subdirectory(EqEuropeanOption)
 add_subdirectory(RandomNumberGeneratorEx)
+add_subdirectory(Bonds)
+add_subdirectory(stochastic_processes)
 
 # Define Project executable
 add_executable(QuantLib_Examples main.cpp)
 
 # Link all libs built from sub directories
-target_link_libraries(QuantLib_Examples QuantLib
+target_link_libraries(QuantLib_Examples
+        QuantLib
+        QL_Basics
+        QL_Macro
         DateTime
         observer
-        QL_Macro
         EqEuropeanOption
-        RandomNumberGeneratorEx)
-
-#target_include_directories(QuantLib_Examples PUBLIC "${PROJECT_BINARY_DIR}")
+        RandomNumberGeneratorEx
+        Bonds
+        StochasticProcesses
+        )

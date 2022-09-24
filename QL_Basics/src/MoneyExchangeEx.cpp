@@ -3,11 +3,15 @@
 //
 #include <iostream>
 #include <ql/money.hpp>
+#include <ql/settings.hpp>
 #include <ql/currencies/all.hpp>
 
 using namespace QuantLib;
 
 void moneyExchangeEx() {
+    Date todaysDate(1, QuantLib::Sep, 2012);
+    Settings::instance().evaluationDate() = todaysDate;
+
     Money::conversionType = Money::AutomatedConversion;
     Currency usd = USDCurrency();
     Currency gbp = GBPCurrency();
@@ -23,5 +27,6 @@ void moneyExchangeEx() {
     Money m_eur = 100 * eur;
     Money m_gbp = 150 * gbp;
 
+    //Set Evaluation date otherwise below will fail
     std::cout << m_eur << " + " << m_gbp << " = " << m_eur + m_gbp << std::endl;
 }

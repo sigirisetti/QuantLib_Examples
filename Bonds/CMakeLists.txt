@@ -1,5 +1,2 @@
-add_library(DateTime BasicCalendarExamples.cpp BasicDatesExamples.cpp DateTimeExAll.hpp)
-target_include_directories(DateTime PUBLIC
-        "${PROJECT_BINARY_DIR}"
-        "${PROJECT_SOURCE_DIR}/DateTime/src"
-        )
+add_library(Bonds BondEx.cpp)
+target_include_directories(Bonds INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})

@@ -18,9 +18,11 @@
 */
 
 #include <ql/qldefines.hpp>
+
 #if !defined(BOOST_ALL_NO_LIB) && defined(BOOST_MSVC)
 #  include <ql/auto_link.hpp>
 #endif
+
 #include <ql/instruments/vanillaoption.hpp>
 #include <ql/pricingengines/vanilla/binomialengine.hpp>
 #include <ql/pricingengines/vanilla/analyticeuropeanengine.hpp>
@@ -73,10 +75,10 @@ void test_vanilla_option_pricing() {
         Date maturity(17, May, 1999);
         DayCounter dayCounter = Actual365Fixed();
 
-        std::cout << "Option type = "  << type << std::endl;
-        std::cout << "Maturity = "        << maturity << std::endl;
-        std::cout << "Underlying price = "        << underlying << std::endl;
-        std::cout << "Strike = "                  << strike << std::endl;
+        std::cout << "Option type = " << type << std::endl;
+        std::cout << "Maturity = " << maturity << std::endl;
+        std::cout << "Underlying price = " << underlying << std::endl;
+        std::cout << "Strike = " << strike << std::endl;
         std::cout << "Risk-free interest rate = " << io::rate(riskFreeRate)
                   << std::endl;
         std::cout << "Dividend yield = " << io::rate(dividendYield)
@@ -85,10 +87,10 @@ void test_vanilla_option_pricing() {
                   << std::endl;
         std::cout << std::endl;
         std::string method;
-        std::cout << std::endl ;
+        std::cout << std::endl;
 
         // write column headings
-        Size widths[] = { 35, 14, 14, 14 };
+        Size widths[] = {35, 14, 14, 14};
         std::cout << std::setw(widths[0]) << std::left << "Method"
                   << std::setw(widths[1]) << std::left << "European"
                   << std::setw(widths[2]) << std::left << "Bermudan"
@@ -96,21 +98,15 @@ void test_vanilla_option_pricing() {
                   << std::endl;
 
         std::vector<Date> exerciseDates;
-        for (Integer i=1; i<=4; i++)
-            exerciseDates.push_back(settlementDate + 3*i*Months);
+        for (Integer i = 1; i <= 4; i++) {
+            exerciseDates.push_back(settlementDate + 3 * i * Months);
+        }
 
-        ext::shared_ptr<Exercise> europeanExercise(
-                new EuropeanExercise(maturity));
+        ext::shared_ptr<Exercise> europeanExercise(new EuropeanExercise(maturity));
+        ext::shared_ptr<Exercise> bermudanExercise(new BermudanExercise(exerciseDates));
+        ext::shared_ptr<Exercise> americanExercise(new AmericanExercise(settlementDate, maturity));
 
-        ext::shared_ptr<Exercise> bermudanExercise(
-                new BermudanExercise(exerciseDates));
-
-        ext::shared_ptr<Exercise> americanExercise(
-                new AmericanExercise(settlementDate,
-                                     maturity));
-
-        Handle<Quote> underlyingH(
-                ext::shared_ptr<Quote>(new SimpleQuote(underlying)));
+        Handle<Quote> underlyingH(ext::shared_ptr<Quote>(new SimpleQuote(underlying)));
 
         // bootstrap the yield/dividend/vol curves
         Handle<YieldTermStructure> flatTermStructure(
@@ -169,8 +165,8 @@ void test_vanilla_option_pricing() {
         method = "Heston semi-analytic";
         ext::shared_ptr<HestonProcess> hestonProcess(
                 new HestonProcess(flatTermStructure, flatDividendTS,
-                                  underlyingH, volatility*volatility,
-                                  1.0, volatility*volatility, 0.001, 0.0));
+                                  underlyingH, volatility * volatility,
+                                  1.0, volatility * volatility, 0.001, 0.0));
         ext::shared_ptr<HestonModel> hestonModel(
                 new HestonModel(hestonProcess));
         europeanOption.setPricingEngine(ext::shared_ptr<PricingEngine>(
@@ -186,8 +182,8 @@ void test_vanilla_option_pricing() {
         method = "Bates semi-analytic";
         ext::shared_ptr<BatesProcess> batesProcess(
                 new BatesProcess(flatTermStructure, flatDividendTS,
-                                 underlyingH, volatility*volatility,
-                                 1.0, volatility*volatility, 0.001, 0.0,
+                                 underlyingH, volatility * volatility,
+                                 1.0, volatility * volatility, 0.001, 0.0,
                                  1e-14, 1e-14, 1e-14));
         ext::shared_ptr<BatesModel> batesModel(new BatesModel(batesProcess));
         europeanOption.setPricingEngine(ext::shared_ptr<PricingEngine>(
@@ -238,7 +234,7 @@ void test_vanilla_option_pricing() {
         ext::shared_ptr<PricingEngine> fdengine =
                 ext::make_shared<FdBlackScholesVanillaEngine>(bsmProcess,
                                                               timeSteps,
-                                                              timeSteps-1);
+                                                              timeSteps - 1);
         europeanOption.setPricingEngine(fdengine);
         bermudanOption.setPricingEngine(fdengine);
         americanOption.setPricingEngine(fdengine);
@@ -252,11 +248,11 @@ void test_vanilla_option_pricing() {
         // Binomial method: Jarrow-Rudd
         method = "Binomial Jarrow-Rudd";
         europeanOption.setPricingEngine(ext::shared_ptr<PricingEngine>(
-                new BinomialVanillaEngine<JarrowRudd>(bsmProcess,timeSteps)));
+                new BinomialVanillaEngine<JarrowRudd>(bsmProcess, timeSteps)));
         bermudanOption.setPricingEngine(ext::shared_ptr<PricingEngine>(
-                new BinomialVanillaEngine<JarrowRudd>(bsmProcess,timeSteps)));
+                new BinomialVanillaEngine<JarrowRudd>(bsmProcess, timeSteps)));
         americanOption.setPricingEngine(ext::shared_ptr<PricingEngine>(
-                new BinomialVanillaEngine<JarrowRudd>(bsmProcess,timeSteps)));
+                new BinomialVanillaEngine<JarrowRudd>(bsmProcess, timeSteps)));
         std::cout << std::setw(widths[0]) << std::left << method
                   << std::fixed
                   << std::setw(widths[1]) << std::left << europeanOption.NPV()
@@ -301,11 +297,11 @@ void test_vanilla_option_pricing() {
         // Binomial method: Binomial Trigeorgis
         method = "Binomial Trigeorgis";
         europeanOption.setPricingEngine(ext::shared_ptr<PricingEngine>(
-                new BinomialVanillaEngine<Trigeorgis>(bsmProcess,timeSteps)));
+                new BinomialVanillaEngine<Trigeorgis>(bsmProcess, timeSteps)));
         bermudanOption.setPricingEngine(ext::shared_ptr<PricingEngine>(
-                new BinomialVanillaEngine<Trigeorgis>(bsmProcess,timeSteps)));
+                new BinomialVanillaEngine<Trigeorgis>(bsmProcess, timeSteps)));
         americanOption.setPricingEngine(ext::shared_ptr<PricingEngine>(
-                new BinomialVanillaEngine<Trigeorgis>(bsmProcess,timeSteps)));
+                new BinomialVanillaEngine<Trigeorgis>(bsmProcess, timeSteps)));
         std::cout << std::setw(widths[0]) << std::left << method
                   << std::fixed
                   << std::setw(widths[1]) << std::left << europeanOption.NPV()
@@ -316,11 +312,11 @@ void test_vanilla_option_pricing() {
         // Binomial method: Binomial Tian
         method = "Binomial Tian";
         europeanOption.setPricingEngine(ext::shared_ptr<PricingEngine>(
-                new BinomialVanillaEngine<Tian>(bsmProcess,timeSteps)));
+                new BinomialVanillaEngine<Tian>(bsmProcess, timeSteps)));
         bermudanOption.setPricingEngine(ext::shared_ptr<PricingEngine>(
-                new BinomialVanillaEngine<Tian>(bsmProcess,timeSteps)));
+                new BinomialVanillaEngine<Tian>(bsmProcess, timeSteps)));
         americanOption.setPricingEngine(ext::shared_ptr<PricingEngine>(
-                new BinomialVanillaEngine<Tian>(bsmProcess,timeSteps)));
+                new BinomialVanillaEngine<Tian>(bsmProcess, timeSteps)));
         std::cout << std::setw(widths[0]) << std::left << method
                   << std::fixed
                   << std::setw(widths[1]) << std::left << europeanOption.NPV()
@@ -331,11 +327,11 @@ void test_vanilla_option_pricing() {
         // Binomial method: Binomial Leisen-Reimer
         method = "Binomial Leisen-Reimer";
         europeanOption.setPricingEngine(ext::shared_ptr<PricingEngine>(
-                new BinomialVanillaEngine<LeisenReimer>(bsmProcess,timeSteps)));
+                new BinomialVanillaEngine<LeisenReimer>(bsmProcess, timeSteps)));
         bermudanOption.setPricingEngine(ext::shared_ptr<PricingEngine>(
-                new BinomialVanillaEngine<LeisenReimer>(bsmProcess,timeSteps)));
+                new BinomialVanillaEngine<LeisenReimer>(bsmProcess, timeSteps)));
         americanOption.setPricingEngine(ext::shared_ptr<PricingEngine>(
-                new BinomialVanillaEngine<LeisenReimer>(bsmProcess,timeSteps)));
+                new BinomialVanillaEngine<LeisenReimer>(bsmProcess, timeSteps)));
         std::cout << std::setw(widths[0]) << std::left << method
                   << std::fixed
                   << std::setw(widths[1]) << std::left << europeanOption.NPV()
@@ -346,11 +342,11 @@ void test_vanilla_option_pricing() {
         // Binomial method: Binomial Joshi
         method = "Binomial Joshi";
         europeanOption.setPricingEngine(ext::shared_ptr<PricingEngine>(
-                new BinomialVanillaEngine<Joshi4>(bsmProcess,timeSteps)));
+                new BinomialVanillaEngine<Joshi4>(bsmProcess, timeSteps)));
         bermudanOption.setPricingEngine(ext::shared_ptr<PricingEngine>(
-                new BinomialVanillaEngine<Joshi4>(bsmProcess,timeSteps)));
+                new BinomialVanillaEngine<Joshi4>(bsmProcess, timeSteps)));
         americanOption.setPricingEngine(ext::shared_ptr<PricingEngine>(
-                new BinomialVanillaEngine<Joshi4>(bsmProcess,timeSteps)));
+                new BinomialVanillaEngine<Joshi4>(bsmProcess, timeSteps)));
         std::cout << std::setw(widths[0]) << std::left << method
                   << std::fixed
                   << std::setw(widths[1]) << std::left << europeanOption.NPV()
@@ -408,7 +404,7 @@ void test_vanilla_option_pricing() {
                   << std::setw(widths[2]) << std::left << "N/A"
                   << std::setw(widths[3]) << std::left << americanOption.NPV()
                   << std::endl;
-    } catch (std::exception& e) {
+    } catch (std::exception &e) {
         std::cerr << e.what() << std::endl;
     } catch (...) {
         std::cerr << "unknown error" << std::endl;

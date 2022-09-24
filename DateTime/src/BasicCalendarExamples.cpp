@@ -3,7 +3,7 @@
 
 using namespace QuantLib;
 
-void printDateInformation(Date d, Calendar cal) {
+void printDateInformation(Date d, const Calendar& cal) {
   if (cal.isBusinessDay(d))
     std::cout << d << " is a business day" << std::endl;
 

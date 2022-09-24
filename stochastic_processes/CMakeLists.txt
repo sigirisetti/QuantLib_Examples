@@ -1,1 +1,5 @@
-add_subdirectory(src)
+add_library(StochasticProcesses GeometricBrownianMotionEx1.cpp)
+
+target_link_libraries(StochasticProcesses QuantLib)
+
+target_include_directories(StochasticProcesses INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})

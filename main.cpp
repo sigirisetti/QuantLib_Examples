@@ -8,6 +8,9 @@
 #include "QL_Macro_Ex_All.hpp"
 #include "VanillaOptions_Ex_all.hpp"
 #include "RandomNumberGeneratorExAll.hpp"
+#include "QL_Basics_All.hpp"
+#include "Bonds_All.hpp"
+#include "stochastic_processes_all.hpp"
 
 using namespace std;
 
@@ -33,6 +36,10 @@ int main()
     runExample("test_vanilla_option_pricing", &test_vanilla_option_pricing);
     runExample("testMersenneTwisterUniformRng", &testMersenneTwisterUniformRng);
     runExample("testRandomSeqGenUsingMTRng", &testRandomSeqGenUsingMTRng);
+    runExample("moneyExchangeEx", &moneyExchangeEx);
+    runExample("run_bond_ex", &run_bond_ex);
+    //runExample("boxMullerGaussianRngEx", &boxMullerGaussianRngEx);
+    runExample("gbmEx1", &gbmEx1);
     return 0;
 }
 
