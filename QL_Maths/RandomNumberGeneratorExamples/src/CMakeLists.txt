@@ -1,5 +1,5 @@
-add_library(RandomNumberGeneratorEx MersenneTwisterUniformRngEx.cpp RandomNumberGeneratorExAll.hpp RandomSequenceUsingMT.cpp)
+add_library(RandomNumberGeneratorEx MersenneTwisterUniformRngEx.cpp RandomSequenceUsingMT.cpp)
 
 target_link_libraries(RandomNumberGeneratorEx QuantLib)
 
-target_include_directories(RandomNumberGeneratorEx INTERFACE .)
+target_include_directories(RandomNumberGeneratorEx INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})

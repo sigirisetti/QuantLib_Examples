@@ -12,11 +12,10 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 ### Add source sub directories or modules
 add_subdirectory(QL_Basics)
 add_subdirectory(QL_Macro)
-
 add_subdirectory(DateTime)
 add_subdirectory(observer)
 add_subdirectory(EqEuropeanOption)
-add_subdirectory(RandomNumberGeneratorEx)
+add_subdirectory(QL_Maths)
 add_subdirectory(Bonds)
 add_subdirectory(stochastic_processes)
 
@@ -32,6 +31,7 @@ target_link_libraries(QuantLib_Examples
         observer
         EqEuropeanOption
         RandomNumberGeneratorEx
+        Integration
         Bonds
         StochasticProcesses
         )

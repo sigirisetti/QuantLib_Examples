@@ -8,6 +8,7 @@
 #include "QL_Macro_Ex_All.hpp"
 #include "VanillaOptions_Ex_all.hpp"
 #include "RandomNumberGeneratorExAll.hpp"
+#include "Integration_All.hpp"
 #include "QL_Basics_All.hpp"
 #include "Bonds_All.hpp"
 #include "stochastic_processes_all.hpp"
@@ -40,6 +41,7 @@ int main()
     runExample("run_bond_ex", &run_bond_ex);
     //runExample("boxMullerGaussianRngEx", &boxMullerGaussianRngEx);
     runExample("gbmEx1", &gbmEx1);
+    runExample("call_option_pricing_using_Integration", &call_option_pricing_using_Integration);
     return 0;
 }
 

@@ -1,0 +1,5 @@
+add_library(Integration call_option_pricing_using_Integration.cpp)
+
+target_link_libraries(Integration QuantLib)
+
+target_include_directories(Integration INTERFACE .)
