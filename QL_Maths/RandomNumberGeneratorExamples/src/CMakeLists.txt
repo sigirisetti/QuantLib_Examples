@@ -2,4 +2,4 @@ add_library(RandomNumberGeneratorEx MersenneTwisterUniformRngEx.cpp RandomNumber
 
 target_link_libraries(RandomNumberGeneratorEx QuantLib)
 
-target_include_directories(RandomNumberGeneratorEx INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(RandomNumberGeneratorEx INTERFACE .)
