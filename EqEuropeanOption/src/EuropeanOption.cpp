@@ -16,9 +16,6 @@
  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
  FOR A PARTICULAR PURPOSE.  See the license for more details.
 */
-
-#include <ql/qldefines.hpp>
-
 #if !defined(BOOST_ALL_NO_LIB) && defined(BOOST_MSVC)
 #  include <ql/auto_link.hpp>
 #endif
@@ -79,18 +76,16 @@ void test_vanilla_option_pricing() {
         std::cout << "Maturity = " << maturity << std::endl;
         std::cout << "Underlying price = " << underlying << std::endl;
         std::cout << "Strike = " << strike << std::endl;
-        std::cout << "Risk-free interest rate = " << io::rate(riskFreeRate)
-                  << std::endl;
-        std::cout << "Dividend yield = " << io::rate(dividendYield)
-                  << std::endl;
-        std::cout << "Volatility = " << io::volatility(volatility)
-                  << std::endl;
+        std::cout << "Risk-free interest rate = " << io::rate(riskFreeRate) << std::endl;
+        std::cout << "Dividend yield = " << io::rate(dividendYield) << std::endl;
+        std::cout << "Volatility = " << io::volatility(volatility) << std::endl;
         std::cout << std::endl;
-        std::string method;
         std::cout << std::endl;
 
+        std::string method;
+
         // write column headings
-        Size widths[] = {35, 14, 14, 14};
+        int widths[] = {35, 14, 14, 14};
         std::cout << std::setw(widths[0]) << std::left << "Method"
                   << std::setw(widths[1]) << std::left << "European"
                   << std::setw(widths[2]) << std::left << "Bermudan"
@@ -119,8 +114,7 @@ void test_vanilla_option_pricing() {
                 ext::shared_ptr<BlackVolTermStructure>(
                         new BlackConstantVol(settlementDate, calendar, volatility,
                                              dayCounter)));
-        ext::shared_ptr<StrikedTypePayoff> payoff(
-                new PlainVanillaPayoff(type, strike));
+        ext::shared_ptr<StrikedTypePayoff> payoff(new PlainVanillaPayoff(type, strike));
         ext::shared_ptr<BlackScholesMertonProcess> bsmProcess(
                 new BlackScholesMertonProcess(underlyingH, flatDividendTS,
                                               flatTermStructure, flatVolTS));

@@ -31,17 +31,17 @@ int main()
 
     //QL_Macro_Example(); //Will block for input
     //runExample(&QL_Macro_Example);//Will block for input
-    runExample("basicDatesExamples", &basicDatesExamples);
-    runExample("test_printDateInformation", &test_printDateInformation);
-    runExample("observer_test", &observer_test);
+    //runExample("basicDatesExamples", &basicDatesExamples);
+    //runExample("test_printDateInformation", &test_printDateInformation);
+    //runExample("observer_test", &observer_test);
     runExample("test_vanilla_option_pricing", &test_vanilla_option_pricing);
-    runExample("testMersenneTwisterUniformRng", &testMersenneTwisterUniformRng);
-    runExample("testRandomSeqGenUsingMTRng", &testRandomSeqGenUsingMTRng);
-    runExample("moneyExchangeEx", &moneyExchangeEx);
-    runExample("run_bond_ex", &run_bond_ex);
+    //runExample("testMersenneTwisterUniformRng", &testMersenneTwisterUniformRng);
+    //runExample("testRandomSeqGenUsingMTRng", &testRandomSeqGenUsingMTRng);
+    //runExample("moneyExchangeEx", &moneyExchangeEx);
+    //runExample("run_bond_ex", &run_bond_ex);
     //runExample("boxMullerGaussianRngEx", &boxMullerGaussianRngEx);
-    runExample("gbmEx1", &gbmEx1);
-    runExample("call_option_pricing_using_Integration", &call_option_pricing_using_Integration);
+    //runExample("gbmEx1", &gbmEx1);
+    //runExample("call_option_pricing_using_Integration", &call_option_pricing_using_Integration);
     return 0;
 }
 
