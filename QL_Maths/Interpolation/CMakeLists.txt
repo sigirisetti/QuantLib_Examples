@@ -1,4 +1,4 @@
-add_library(Interpolation LinearInterpolationExample.cpp)
+add_library(Interpolation LinearInterpolationExample.cpp CubicNaturalSplineExample.cpp CubicInterpolationExample.cpp)
 
 target_link_libraries(Interpolation QuantLib)
 

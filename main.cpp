@@ -47,6 +47,8 @@ int main()
     //runExample("gauss_chebyshev", &gauss_chebyshev);
     //runExample("testSolvers", &testSolvers);
     runExample("linearInterpolationExample", &linearInterpolationExample);
+    runExample("cubicNaturalSplineExample", &cubicNaturalSplineExample);
+    runExample("cubicInterpolationExample", &cubicInterpolationExample);
     return 0;
 }
 
