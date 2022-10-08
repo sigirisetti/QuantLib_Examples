@@ -5,4 +5,5 @@
 #ifndef QUANTLIB_EXAMPLES_INTEGRATION_ALL_HPP
 #define QUANTLIB_EXAMPLES_INTEGRATION_ALL_HPP
 void call_option_pricing_using_Integration();
+void gauss_chebyshev();
 #endif //QUANTLIB_EXAMPLES_INTEGRATION_ALL_HPP

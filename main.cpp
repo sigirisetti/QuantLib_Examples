@@ -12,6 +12,7 @@
 #include "QL_Basics_All.hpp"
 #include "Bonds_All.hpp"
 #include "stochastic_processes_all.hpp"
+#include "Solver_All.hpp"
 
 using namespace std;
 
@@ -34,7 +35,7 @@ int main()
     //runExample("basicDatesExamples", &basicDatesExamples);
     //runExample("test_printDateInformation", &test_printDateInformation);
     //runExample("observer_test", &observer_test);
-    runExample("test_vanilla_option_pricing", &test_vanilla_option_pricing);
+    //runExample("test_vanilla_option_pricing", &test_vanilla_option_pricing);
     //runExample("testMersenneTwisterUniformRng", &testMersenneTwisterUniformRng);
     //runExample("testRandomSeqGenUsingMTRng", &testRandomSeqGenUsingMTRng);
     //runExample("moneyExchangeEx", &moneyExchangeEx);
@@ -42,6 +43,8 @@ int main()
     //runExample("boxMullerGaussianRngEx", &boxMullerGaussianRngEx);
     //runExample("gbmEx1", &gbmEx1);
     //runExample("call_option_pricing_using_Integration", &call_option_pricing_using_Integration);
+    //runExample("gauss_chebyshev", &gauss_chebyshev);
+    runExample("testSolvers", &testSolvers);
     return 0;
 }
 

@@ -1,4 +1,4 @@
-add_library(Integration call_option_pricing_using_Integration.cpp)
+add_library(Integration call_option_pricing_using_Integration.cpp gauss_chebyshev.cpp)
 
 target_link_libraries(Integration QuantLib)
 

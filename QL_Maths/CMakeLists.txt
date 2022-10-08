@@ -1,2 +1,3 @@
 add_subdirectory(RandomNumberGeneratorExamples)
 add_subdirectory(Integration)
+add_subdirectory(Solver)

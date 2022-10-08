@@ -14,13 +14,13 @@ add_subdirectory(QL_Basics)
 add_subdirectory(QL_Macro)
 add_subdirectory(DateTime)
 add_subdirectory(observer)
-add_subdirectory(EqEuropeanOption)
+add_subdirectory(Options)
 add_subdirectory(QL_Maths)
 add_subdirectory(Bonds)
 add_subdirectory(stochastic_processes)
 
 # Define Project executable
-add_executable(QuantLib_Examples main.cpp)
+add_executable(QuantLib_Examples main.cpp QL_Maths/Solver/Solver_All.hpp)
 
 # Link all libs built from sub directories
 target_link_libraries(QuantLib_Examples
@@ -29,9 +29,10 @@ target_link_libraries(QuantLib_Examples
         QL_Macro
         DateTime
         observer
-        EqEuropeanOption
+        Options
         RandomNumberGeneratorEx
         Integration
         Bonds
         StochasticProcesses
+        Solver
         )
