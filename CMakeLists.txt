@@ -20,7 +20,7 @@ add_subdirectory(Bonds)
 add_subdirectory(stochastic_processes)
 
 # Define Project executable
-add_executable(QuantLib_Examples main.cpp QL_Maths/Solver/Solver_All.hpp)
+add_executable(QuantLib_Examples main.cpp)
 
 # Link all libs built from sub directories
 target_link_libraries(QuantLib_Examples
@@ -35,4 +35,5 @@ target_link_libraries(QuantLib_Examples
         Bonds
         StochasticProcesses
         Solver
+        Interpolation
         )

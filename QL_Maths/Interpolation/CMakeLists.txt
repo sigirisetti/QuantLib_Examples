@@ -1,0 +1,5 @@
+add_library(Interpolation LinearInterpolationExample.cpp)
+
+target_link_libraries(Interpolation QuantLib)
+
+target_include_directories(Interpolation INTERFACE .)

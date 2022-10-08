@@ -13,6 +13,7 @@
 #include "Bonds_All.hpp"
 #include "stochastic_processes_all.hpp"
 #include "Solver_All.hpp"
+#include "Interpolation_All.hpp"
 
 using namespace std;
 
@@ -44,7 +45,8 @@ int main()
     //runExample("gbmEx1", &gbmEx1);
     //runExample("call_option_pricing_using_Integration", &call_option_pricing_using_Integration);
     //runExample("gauss_chebyshev", &gauss_chebyshev);
-    runExample("testSolvers", &testSolvers);
+    //runExample("testSolvers", &testSolvers);
+    runExample("linearInterpolationExample", &linearInterpolationExample);
     return 0;
 }
 
