@@ -36,4 +36,5 @@ target_link_libraries(QuantLib_Examples
         StochasticProcesses
         Solver
         Interpolation
+        Matrix
         )

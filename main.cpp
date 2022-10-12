@@ -14,6 +14,7 @@
 #include "stochastic_processes_all.hpp"
 #include "Solver_All.hpp"
 #include "Interpolation_All.hpp"
+#include "Matrix_All.hpp"
 
 using namespace std;
 
@@ -46,9 +47,11 @@ int main()
     //runExample("call_option_pricing_using_Integration", &call_option_pricing_using_Integration);
     //runExample("gauss_chebyshev", &gauss_chebyshev);
     //runExample("testSolvers", &testSolvers);
-    runExample("linearInterpolationExample", &linearInterpolationExample);
-    runExample("cubicNaturalSplineExample", &cubicNaturalSplineExample);
-    runExample("cubicInterpolationExample", &cubicInterpolationExample);
+    //runExample("linearInterpolationExample", &linearInterpolationExample);
+    //runExample("cubicNaturalSplineExample", &cubicNaturalSplineExample);
+    //runExample("cubicInterpolationExample", &cubicInterpolationExample);
+    runExample("matrix_inverse_example", &matrix_inverse_example);
+    runExample("MatrixDecomposition", &MatrixDecomposition);
     return 0;
 }
 
