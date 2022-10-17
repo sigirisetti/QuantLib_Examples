@@ -15,6 +15,7 @@
 #include "Solver_All.hpp"
 #include "Interpolation_All.hpp"
 #include "Matrix_All.hpp"
+#include "Optimizer_All.h"
 
 using namespace std;
 
@@ -52,6 +53,7 @@ int main()
     //runExample("cubicInterpolationExample", &cubicInterpolationExample);
     runExample("matrix_inverse_example", &matrix_inverse_example);
     runExample("MatrixDecomposition", &MatrixDecomposition);
+    runExample("optimizer_example", &optimizer_example);
     return 0;
 }
 
