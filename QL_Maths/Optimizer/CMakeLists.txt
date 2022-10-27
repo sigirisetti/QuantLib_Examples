@@ -1,4 +1,4 @@
-add_library(Optimizer optimizer_example.cpp RosenBrockFunction.cpp CallOptionProblemFunction.cpp CallOptionProblemFunction.h testCallOptionProblemFunction.cpp)
+add_library(Optimizer optimizer_example.cpp CallOptionProblemFunction.cpp testCallOptionProblemFunction.cpp)
 
 target_link_libraries(Optimizer QuantLib common)
 
