@@ -54,6 +54,7 @@ int main()
     runExample("matrix_inverse_example", &matrix_inverse_example);
     runExample("MatrixDecomposition", &MatrixDecomposition);
     runExample("optimizer_example", &optimizer_example);
+    runExample("testLmOptimizer", &testLmOptimizer);
     return 0;
 }
 
