@@ -55,6 +55,7 @@ int main()
     runExample("MatrixDecomposition", &MatrixDecomposition);
     runExample("optimizer_example", &optimizer_example);
     runExample("testLmOptimizer", &testLmOptimizer);
+    runExample("inverseCumulativeRsgExample", &inverseCumulativeRsgExample);
     return 0;
 }
 

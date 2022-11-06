@@ -7,4 +7,5 @@
 void testMersenneTwisterUniformRng();
 void testRandomSeqGenUsingMTRng();
 void boxMullerGaussianRngEx();
+void inverseCumulativeRsgExample();
 #endif //QUANTLIB_EXAMPLES_RANDOMNUMBERGENERATOREXALL_HPP

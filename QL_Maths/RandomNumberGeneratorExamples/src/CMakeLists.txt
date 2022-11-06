@@ -1,4 +1,4 @@
-add_library(RandomNumberGeneratorEx MersenneTwisterUniformRngEx.cpp RandomSequenceUsingMT.cpp)
+add_library(RandomNumberGeneratorEx MersenneTwisterUniformRngEx.cpp RandomSequenceUsingMT.cpp evt_inv_dist.cpp)
 
 target_link_libraries(RandomNumberGeneratorEx QuantLib)
 
