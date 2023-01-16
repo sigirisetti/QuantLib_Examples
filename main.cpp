@@ -41,7 +41,7 @@ int main()
     //runExample("basicDatesExamples", &basicDatesExamples);
     //runExample("test_printDateInformation", &test_printDateInformation);
     //runExample("observer_test", &observer_test);
-    //runExample("test_vanilla_option_pricing", &test_vanilla_option_pricing);
+    //runExample("test_vanilla_option_pricing", &test_vanilla_eq_option_pricing);
     //runExample("testMersenneTwisterUniformRng", &testMersenneTwisterUniformRng);
     //runExample("testRandomSeqGenUsingMTRng", &testRandomSeqGenUsingMTRng);
     //runExample("moneyExchangeEx", &moneyExchangeEx);

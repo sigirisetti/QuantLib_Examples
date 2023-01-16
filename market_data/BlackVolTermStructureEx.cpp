@@ -2,6 +2,7 @@
 // Created by appuprakhya on 16/1/23.
 //
 #include<iostream>
+#include<fstream>
 #include<vector>
 
 #include<boost/assign/std/vector.hpp>
@@ -109,12 +110,29 @@ void testingBlackVolSurface() {
     sep1680Vol = volatilitySurface.blackVol(expirations[4], 1680.0, true);
     std::cout << boost::format("Sep14 1680.0 volatility: %f") % sep1680Vol << std::endl;
 
+
+    //write out data points for gnuplot surface plot (using last interpolator - bicubic splines)
+    std::ofstream volSurfaceFile;
+    volSurfaceFile.open("/tmp/volsurface.dat", std::ios::out);
     for (Date expiration: expirations) {
         for (Real strike = strikes[0] - 5.0; strike <= strikes[4] + 5.0; ++strike) {
             Real volatility = volatilitySurface.blackVol(expiration, strike, true);
-            std::cout << boost::format("%f %f %f") % strike %
-                         dayCounter.dayCount(Settings::instance().evaluationDate(),
-                                             expiration) % volatility << std::endl;
+            volSurfaceFile << boost::format("%f %f %f") % strike %
+                              dayCounter.dayCount(Settings::instance().evaluationDate(),
+                                                  expiration) % volatility << std::endl;
         }
     }
+    volSurfaceFile.close();
+    /* gnuplot script to generate 3D surface plot
+
+    set key top center
+    set xlabel "Strike"
+    set ylabel "Time to maturity (days)"
+    set border 4095
+    set ticslevel 0
+    set dgrid3d 41,41
+    set pm3d
+    splot "volsurface.dat" u 1:2:3 with lines title "ES Volatility Surface"
+
+    */
 }

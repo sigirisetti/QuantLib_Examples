@@ -1,4 +1,4 @@
-add_library(Options EuropeanOption.cpp)
+add_library(Options EqEuropeanOption.cpp)
 
 target_link_libraries(Options QuantLib)
 

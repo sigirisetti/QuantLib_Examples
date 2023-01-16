@@ -50,7 +50,7 @@ namespace QuantLib {
 #endif
 
 
-void test_vanilla_option_pricing() {
+void test_vanilla_eq_option_pricing() {
 
     try {
 
