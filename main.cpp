@@ -16,6 +16,9 @@
 #include "Interpolation_All.hpp"
 #include "Matrix_All.hpp"
 #include "Optimizer_All.h"
+#include "Indexes_All.hpp"
+#include "MarketData_All.hpp"
+
 
 using namespace std;
 
@@ -56,6 +59,8 @@ int main()
     runExample("optimizer_example", &optimizer_example);
     runExample("testLmOptimizer", &testLmOptimizer);
     runExample("inverseCumulativeRsgExample", &inverseCumulativeRsgExample);
+    runExample("euribor_index_info", &euribor_index_info);
+    runExample("testingBlackVolSurface", &testingBlackVolSurface);
     return 0;
 }
 

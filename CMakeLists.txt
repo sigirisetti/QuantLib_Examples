@@ -19,6 +19,8 @@ add_subdirectory(Options)
 add_subdirectory(QL_Maths)
 add_subdirectory(Bonds)
 add_subdirectory(stochastic_processes)
+add_subdirectory(Indexes)
+add_subdirectory(market_data)
 
 # Define Project executable
 add_executable(QuantLib_Examples main.cpp)
@@ -40,4 +42,6 @@ target_link_libraries(QuantLib_Examples
         Interpolation
         Matrix
         Optimizer
+        Indexes
+        MarketData
         )
