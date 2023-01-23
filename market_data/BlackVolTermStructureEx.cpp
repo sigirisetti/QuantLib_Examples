@@ -21,8 +21,9 @@ using namespace QuantLib;
 void testingBlackVolSurface() {
 
     using namespace boost::assign;
+
     std::vector<Real> strikes;
-    strikes += 1650.0, 1660.0, 1670.0, 1675.0, 1680.0;
+    strikes += 1650.0, 1660.0, 1670.0, 1675.0, 1680.0; //using boost::assign
 
     std::vector<Date> expirations;
     expirations += Date(20, Month::Dec, 2013), Date(17,

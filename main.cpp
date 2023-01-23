@@ -22,11 +22,13 @@
 
 using namespace std;
 
+
 void runExample(const char* name, void (*fun) ()) {
     cout << "=========================================" << endl;
     cout << "Running Example : " << name << endl;
     fun();
 }
+
 
 int main()
 {
@@ -36,31 +38,55 @@ int main()
               << BOOST_VERSION % 100                // patch level
               << std::endl;
 
+
+    /* Basics */
     //QL_Macro_Example(); //Will block for input
     //runExample(&QL_Macro_Example);//Will block for input
     //runExample("basicDatesExamples", &basicDatesExamples);
     //runExample("test_printDateInformation", &test_printDateInformation);
     //runExample("observer_test", &observer_test);
-    //runExample("test_vanilla_option_pricing", &test_vanilla_eq_option_pricing);
+    //runExample("moneyExchangeEx", &moneyExchangeEx);
+
+
+    /* MC examples */
     //runExample("testMersenneTwisterUniformRng", &testMersenneTwisterUniformRng);
     //runExample("testRandomSeqGenUsingMTRng", &testRandomSeqGenUsingMTRng);
-    //runExample("moneyExchangeEx", &moneyExchangeEx);
-    //runExample("run_bond_ex", &run_bond_ex);
     //runExample("boxMullerGaussianRngEx", &boxMullerGaussianRngEx);
+    //runExample("inverseCumulativeRsgExample", &inverseCumulativeRsgExample);
+
+
+    /* Stochastic Process */
     //runExample("gbmEx1", &gbmEx1);
-    //runExample("call_option_pricing_using_Integration", &call_option_pricing_using_Integration);
-    //runExample("gauss_chebyshev", &gauss_chebyshev);
-    //runExample("testSolvers", &testSolvers);
+
+
+    /* Numerical Examples */
+    // Interpolators
     //runExample("linearInterpolationExample", &linearInterpolationExample);
     //runExample("cubicNaturalSplineExample", &cubicNaturalSplineExample);
     //runExample("cubicInterpolationExample", &cubicInterpolationExample);
-    runExample("matrix_inverse_example", &matrix_inverse_example);
-    runExample("MatrixDecomposition", &MatrixDecomposition);
-    runExample("optimizer_example", &optimizer_example);
-    runExample("testLmOptimizer", &testLmOptimizer);
-    runExample("inverseCumulativeRsgExample", &inverseCumulativeRsgExample);
+    //runExample("gauss_chebyshev", &gauss_chebyshev);
+    // Matrices
+    //runExample("matrix_inverse_example", &matrix_inverse_example);
+    //runExample("MatrixDecomposition", &MatrixDecomposition);
+    // Solvers and Optimizers
+    //runExample("testSolvers", &testSolvers);
+    //runExample("optimizer_example", &optimizer_example);
+    //runExample("testLmOptimizer", &testLmOptimizer);
+
+
+    /* Indexes */
     runExample("euribor_index_info", &euribor_index_info);
+
+
+    /* Bonds */
+    //runExample("run_bond_ex", &run_bond_ex);
+
+
+    /* Options */
+    //runExample("call_option_pricing_using_Integration", &call_option_pricing_using_Integration);
     runExample("testingBlackVolSurface", &testingBlackVolSurface);
+    runExample("test_vanilla_option_pricing", &test_vanilla_eq_option_pricing);
+    runExample("test_fx_option_pricing", &test_fx_option_pricing);
+
     return 0;
 }
-
