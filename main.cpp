@@ -19,16 +19,13 @@
 #include "Indexes_All.hpp"
 #include "MarketData_All.hpp"
 
-
 using namespace std;
-
 
 void runExample(const char* name, void (*fun) ()) {
     cout << "=========================================" << endl;
     cout << "Running Example : " << name << endl;
     fun();
 }
-
 
 int main()
 {
@@ -38,15 +35,30 @@ int main()
               << BOOST_VERSION % 100                // patch level
               << std::endl;
 
-
-    /* Basics */
+    /* Macros */
     //QL_Macro_Example(); //Will block for input
     //runExample(&QL_Macro_Example);//Will block for input
-    //runExample("basicDatesExamples", &basicDatesExamples);
-    //runExample("test_printDateInformation", &test_printDateInformation);
-    //runExample("observer_test", &observer_test);
-    //runExample("moneyExchangeEx", &moneyExchangeEx);
 
+    /* Dates */
+    //runExample("basicDatesExamples", &basicDatesExamples);
+    runExample("test_printDateInformation", &test_printDateInformation);
+    runExample("dateArthematic", &dateArthematic);
+
+    /* Calendar */
+    runExample("calendarTesting", &calendarTesting);
+    runExample("holidaySetup", &holidaySetup);
+
+    /* Business Day Adjustment */
+    runExample("businessDayAdjustment", &businessDayAdjustment);
+
+    /* Daycount */
+    runExample("dayCounterTesting1", &dayCounterTesting1);
+
+    /* Observable */
+    //runExample("observer_test", &observer_test);
+
+    /* Money */
+    //runExample("moneyExchangeEx", &moneyExchangeEx);
 
     /* MC examples */
     //runExample("testMersenneTwisterUniformRng", &testMersenneTwisterUniformRng);
@@ -54,10 +66,8 @@ int main()
     //runExample("boxMullerGaussianRngEx", &boxMullerGaussianRngEx);
     //runExample("inverseCumulativeRsgExample", &inverseCumulativeRsgExample);
 
-
     /* Stochastic Process */
     //runExample("gbmEx1", &gbmEx1);
-
 
     /* Numerical Examples */
     // Interpolators
@@ -73,20 +83,17 @@ int main()
     //runExample("optimizer_example", &optimizer_example);
     //runExample("testLmOptimizer", &testLmOptimizer);
 
-
     /* Indexes */
-    runExample("euribor_index_info", &euribor_index_info);
-
+    //runExample("euribor_index_info", &euribor_index_info);
 
     /* Bonds */
     //runExample("run_bond_ex", &run_bond_ex);
 
-
     /* Options */
     //runExample("call_option_pricing_using_Integration", &call_option_pricing_using_Integration);
-    runExample("testingBlackVolSurface", &testingBlackVolSurface);
-    runExample("test_vanilla_option_pricing", &test_vanilla_eq_option_pricing);
-    runExample("test_fx_option_pricing", &test_fx_option_pricing);
+    //runExample("testingBlackVolSurface", &testingBlackVolSurface);
+    //runExample("test_vanilla_option_pricing", &test_vanilla_eq_option_pricing);
+    //runExample("test_fx_option_pricing", &test_fx_option_pricing);
 
     return 0;
 }

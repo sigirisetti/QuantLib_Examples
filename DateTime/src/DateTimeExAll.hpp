@@ -6,4 +6,9 @@
 #define QUANTLIB_EXAMPLES_DATETIMEEXALL_HPP
 void basicDatesExamples();
 void test_printDateInformation();
+void dateArthematic();
+void calendarTesting();
+void holidaySetup();
+void businessDayAdjustment();
+void dayCounterTesting1();
 #endif //QUANTLIB_EXAMPLES_DATETIMEEXALL_HPP

@@ -3,8 +3,7 @@
 
 using namespace QuantLib;
 
-void basicDatesExamples()
-{
+void basicDatesExamples() {
     Date d1(34524);
     Date d2(6, September, 2012);
 
@@ -20,6 +19,21 @@ void basicDatesExamples()
     std::cout << "Month is " << d.month() << std::endl;
     std::cout << "Year is " << d.year() << std::endl;
     std::cout << "Serial number is " << d.serialNumber() << std::endl;
+}
 
+void dateArthematic() {
+    Date myDate(12, Aug, 2009);
+    std::cout << myDate << std::endl;
+    myDate++;
+    std::cout << myDate << std::endl;
+    myDate += 12 * Days;
+    std::cout << myDate << std::endl;
+    myDate -= 2 * Months;
+    std::cout << myDate << std::endl;
+    myDate--;
+    std::cout << myDate << std::endl;
+    Period myP(10, Weeks);
+    myDate += myP;
+    std::cout << myDate << std::endl;
 }
 
