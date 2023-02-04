@@ -35,29 +35,33 @@ int main()
               << BOOST_VERSION % 100                // patch level
               << std::endl;
 
+    /* Arrays */
+    //runExample("ql_arrays_test", &ql_arrays_test);
+    runExample("ql_matrix_test", &ql_matrix_test);
+
     /* Macros */
     //QL_Macro_Example(); //Will block for input
     //runExample(&QL_Macro_Example);//Will block for input
 
     /* Dates */
     //runExample("basicDatesExamples", &basicDatesExamples);
-    runExample("test_printDateInformation", &test_printDateInformation);
-    runExample("dateArthematic", &dateArthematic);
+    //runExample("test_printDateInformation", &test_printDateInformation);
+    //runExample("dateArthematic", &dateArthematic);
 
     /* Calendar */
-    runExample("calendarTesting", &calendarTesting);
-    runExample("holidaySetup", &holidaySetup);
+    //runExample("calendarTesting", &calendarTesting);
+    //runExample("holidaySetup", &holidaySetup);
 
     /* Business Day Adjustment */
-    runExample("businessDayAdjustment", &businessDayAdjustment);
+    //runExample("businessDayAdjustment", &businessDayAdjustment);
 
     /* Daycount */
-    runExample("dayCounterTesting1", &dayCounterTesting1);
+    //runExample("dayCounterTesting1", &dayCounterTesting1);
 
     /* Schedules */
-    runExample("dateScheduleGen", &dateScheduleGen);
-    runExample("dateScheduleGen_NextAndPrevious", &dateScheduleGen_NextAndPrevious);
-    runExample("makeScheduleFlowApiHelper", &makeScheduleFlowApiHelper);
+    //runExample("dateScheduleGen", &dateScheduleGen);
+    //runExample("dateScheduleGen_NextAndPrevious", &dateScheduleGen_NextAndPrevious);
+    //runExample("makeScheduleFlowApiHelper", &makeScheduleFlowApiHelper);
 
     /* Observable */
     //runExample("observer_test", &observer_test);
