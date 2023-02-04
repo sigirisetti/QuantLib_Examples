@@ -4,7 +4,9 @@
 #include <iostream>
 #include <ql/money.hpp>
 #include <ql/settings.hpp>
-#include <ql/currencies/all.hpp>
+#include <ql/currencies/america.hpp>
+#include <ql/currencies/europe.hpp>
+#include <ql/currencies/exchangeratemanager.hpp>
 
 using namespace QuantLib;
 
@@ -12,7 +14,6 @@ void moneyExchangeEx() {
     Date todaysDate(1, QuantLib::Sep, 2012);
     Settings::instance().evaluationDate() = todaysDate;
 
-    Money::conversionType = Money::AutomatedConversion;
     Currency usd = USDCurrency();
     Currency gbp = GBPCurrency();
     Currency eur = EURCurrency();

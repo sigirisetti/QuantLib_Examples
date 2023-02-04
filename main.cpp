@@ -54,6 +54,11 @@ int main()
     /* Daycount */
     runExample("dayCounterTesting1", &dayCounterTesting1);
 
+    /* Schedules */
+    runExample("dateScheduleGen", &dateScheduleGen);
+    runExample("dateScheduleGen_NextAndPrevious", &dateScheduleGen_NextAndPrevious);
+    runExample("makeScheduleFlowApiHelper", &makeScheduleFlowApiHelper);
+
     /* Observable */
     //runExample("observer_test", &observer_test);
 

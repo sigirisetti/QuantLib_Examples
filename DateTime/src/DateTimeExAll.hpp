@@ -11,4 +11,7 @@ void calendarTesting();
 void holidaySetup();
 void businessDayAdjustment();
 void dayCounterTesting1();
+void dateScheduleGen();
+void dateScheduleGen_NextAndPrevious();
+void makeScheduleFlowApiHelper();
 #endif //QUANTLIB_EXAMPLES_DATETIMEEXALL_HPP
