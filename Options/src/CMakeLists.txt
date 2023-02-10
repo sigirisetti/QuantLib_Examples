@@ -1,4 +1,4 @@
-add_library(Options EqEuropeanOption.cpp FxOptionPricingEx.cpp)
+add_library(Options EqEuropeanOption.cpp FxOptionPricingEx.cpp BarrierOptionEx.cpp)
 
 target_link_libraries(Options QuantLib)
 

@@ -108,9 +108,10 @@ int main()
 
     /* Quotes */
     //runExample("ql_quotes_test", &ql_quotes_test);
-    runExample("ql_derived_quote_test", &ql_derived_quote_test);
-    runExample("ql_composite_quote_test", &ql_composite_quote_test);
-    runExample("ql_fx_delta_quote_test", &ql_fx_delta_quote_test);
+    //runExample("ql_derived_quote_test", &ql_derived_quote_test);
+    //runExample("ql_composite_quote_test", &ql_composite_quote_test);
+    //runExample("ql_fx_delta_quote_test", &ql_fx_delta_quote_test);
+    runExample("test_up_and_out_barrier_option_pricing", &test_up_and_out_barrier_option_pricing);
 
     return 0;
 }
