@@ -1,3 +1,5 @@
+add_subdirectory(Quotes)
+
 add_library(MarketData BlackVolTermStructureEx.cpp)
 
 target_link_libraries(MarketData QuantLib)

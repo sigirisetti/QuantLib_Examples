@@ -52,4 +52,5 @@ target_link_libraries(QuantLib_Examples
         Optimizer
         Indexes
         MarketData
+        Quotes
         )

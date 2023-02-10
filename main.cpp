@@ -18,6 +18,8 @@
 #include "Optimizer_All.h"
 #include "Indexes_All.hpp"
 #include "MarketData_All.hpp"
+#include "Quotes_Ex_All.hpp"
+
 
 using namespace std;
 
@@ -37,7 +39,7 @@ int main()
 
     /* Arrays */
     //runExample("ql_arrays_test", &ql_arrays_test);
-    runExample("ql_matrix_test", &ql_matrix_test);
+    //runExample("ql_matrix_test", &ql_matrix_test);
 
     /* Macros */
     //QL_Macro_Example(); //Will block for input
@@ -103,6 +105,12 @@ int main()
     //runExample("testingBlackVolSurface", &testingBlackVolSurface);
     //runExample("test_vanilla_option_pricing", &test_vanilla_eq_option_pricing);
     //runExample("test_fx_option_pricing", &test_fx_option_pricing);
+
+    /* Quotes */
+    //runExample("ql_quotes_test", &ql_quotes_test);
+    runExample("ql_derived_quote_test", &ql_derived_quote_test);
+    runExample("ql_composite_quote_test", &ql_composite_quote_test);
+    runExample("ql_fx_delta_quote_test", &ql_fx_delta_quote_test);
 
     return 0;
 }

@@ -1,0 +1,2 @@
+add_library(Quotes simple_quote_ex.cpp derived_quote_ex.cpp composite_quote_ex.cpp delta_vol_quote_ex.cpp)
+target_include_directories(Quotes INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
