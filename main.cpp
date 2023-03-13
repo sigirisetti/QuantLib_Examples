@@ -71,6 +71,12 @@ int main()
     /* Money */
     //runExample("moneyExchangeEx", &moneyExchangeEx);
 
+    /* Interest Rates */
+    //runExample("Interest_Rate_Ex", &Interest_Rate_Ex);
+
+    /* Cashflow examples*/
+    runExample("cashflow_examples", &cashflow_examples);
+
     /* MC examples */
     //runExample("testMersenneTwisterUniformRng", &testMersenneTwisterUniformRng);
     //runExample("testRandomSeqGenUsingMTRng", &testRandomSeqGenUsingMTRng);
@@ -105,13 +111,13 @@ int main()
     //runExample("testingBlackVolSurface", &testingBlackVolSurface);
     //runExample("test_vanilla_option_pricing", &test_vanilla_eq_option_pricing);
     //runExample("test_fx_option_pricing", &test_fx_option_pricing);
+    //runExample("test_up_and_out_barrier_option_pricing", &test_up_and_out_barrier_option_pricing);
 
     /* Quotes */
     //runExample("ql_quotes_test", &ql_quotes_test);
     //runExample("ql_derived_quote_test", &ql_derived_quote_test);
     //runExample("ql_composite_quote_test", &ql_composite_quote_test);
     //runExample("ql_fx_delta_quote_test", &ql_fx_delta_quote_test);
-    runExample("test_up_and_out_barrier_option_pricing", &test_up_and_out_barrier_option_pricing);
 
     return 0;
 }

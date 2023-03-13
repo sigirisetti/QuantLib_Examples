@@ -1,5 +1,5 @@
 add_library(QL_Basics
-        MoneyExchangeEx.cpp QL_Version.cpp QL_Arrays.cpp Matrices.cpp)
+        MoneyExchangeEx.cpp QL_Version.cpp QL_Arrays.cpp Matrices.cpp Interest_Rate_Ex.cpp cashflow_examples.cpp)
 
 target_link_libraries(QL_Basics QuantLib)
 

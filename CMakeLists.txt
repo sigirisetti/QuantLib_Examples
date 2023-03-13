@@ -11,7 +11,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 
 # Below is explicit reference to a specific QuantLib version.
 # You can simply remove below two declarations to refer to installed lib
-add_library(QuantLib SHARED IMPORTED)
+add_library(QuantLib SHARED IMPORTED patterns/patterns_ex_all.hpp patterns/singleton_ex.cpp)
 set_target_properties(QuantLib PROPERTIES
         INTERFACE_INCLUDE_DIRECTORIES /home/appuprakhya/work/git/QL/QuantLib-v1.29
         IMPORTED_LOCATION /home/appuprakhya/work/git/QL/QuantLib-v1.29/cmake-build-debug/ql/libQuantLib.so.1.29.0
@@ -29,6 +29,7 @@ add_subdirectory(Bonds)
 add_subdirectory(stochastic_processes)
 add_subdirectory(Indexes)
 add_subdirectory(market_data)
+add_subdirectory(patterns)
 
 # Define Project executable
 add_executable(QuantLib_Examples main.cpp)
@@ -53,4 +54,5 @@ target_link_libraries(QuantLib_Examples
         Indexes
         MarketData
         Quotes
+        Patterns
         )
