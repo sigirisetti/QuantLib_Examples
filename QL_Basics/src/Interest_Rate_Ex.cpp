@@ -2,7 +2,7 @@
 // Created by appuprakhya on 18/2/23.
 //
 #include<iostream>
-#include<ql/interestrate.cpp>
+#include<ql/interestrate.hpp>
 #include <ql/time/daycounters/actual360.hpp>
 
 using namespace QuantLib;

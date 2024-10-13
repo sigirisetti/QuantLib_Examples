@@ -1,6 +1,5 @@
 #include <iostream>
 
-#include <boost/preprocessor/stringize.hpp>
 #include <boost/version.hpp>
 
 #include "DateTimeExAll.hpp"
@@ -12,7 +11,7 @@
 #include "QL_Basics_All.hpp"
 #include "Bonds_All.hpp"
 #include "stochastic_processes_all.hpp"
-#include "Solver_All.hpp"
+//#include "Solver_All.hpp"
 #include "Interpolation_All.hpp"
 #include "Matrix_All.hpp"
 #include "Optimizer_All.h"

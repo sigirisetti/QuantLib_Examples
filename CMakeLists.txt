@@ -29,7 +29,6 @@ add_subdirectory(Bonds)
 add_subdirectory(stochastic_processes)
 add_subdirectory(Indexes)
 add_subdirectory(market_data)
-add_subdirectory(patterns)
 
 # Define Project executable
 add_executable(QuantLib_Examples main.cpp)
@@ -47,12 +46,12 @@ target_link_libraries(QuantLib_Examples
         Integration
         Bonds
         StochasticProcesses
-        Solver
+        # Solver
         Interpolation
         Matrix
         Optimizer
         Indexes
         MarketData
         Quotes
-        Patterns
-        )
+        # Patterns
+)
