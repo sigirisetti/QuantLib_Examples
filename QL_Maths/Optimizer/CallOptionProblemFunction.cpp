@@ -5,7 +5,6 @@
 #include "CallOptionProblemFunction.h"
 
 #include<ql/quantlib.hpp>
-#include <ql/utilities/disposable.hpp>
 #include "common_All.hpp"
 
 using namespace QuantLib;
@@ -19,7 +18,7 @@ Real CallOptionProblemFunction::value(const Array &x) const {
     return res;
 }
 
-Disposable<Array> CallOptionProblemFunction::values(const Array &x) const {
+Array CallOptionProblemFunction::values(const Array &x) const {
     Array res(4);
     res[0] = blackScholesPrice(x[0], K1_, rd_, rf_, x[1], tau_, phi_) - C1_;
     res[1] = blackScholesPrice(x[0], K2_, rd_, rf_, x[1], tau_, phi_) - C2_;

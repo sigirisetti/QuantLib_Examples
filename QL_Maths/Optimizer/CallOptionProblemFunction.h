@@ -6,7 +6,6 @@
 #define QUANTLIB_EXAMPLES_CALLOPTIONPROBLEMFUNCTION_H
 
 #include<ql/quantlib.hpp>
-#include <ql/utilities/disposable.hpp>
 
 using namespace QuantLib;
 
@@ -29,7 +28,7 @@ public:
 
     Real value ( const Array & x ) const;
 
-    Disposable<Array> values ( const Array & x ) const;
+    Array values ( const Array & x ) const;
 };
 
 

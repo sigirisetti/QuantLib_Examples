@@ -2,7 +2,6 @@
 // Created by appuprakhya on 17/10/22.
 //
 #include <ql/quantlib.hpp>
-#include <ql/utilities/disposable.hpp>
 #include "RosenBrockFunction.h"
 
 using namespace QuantLib;
@@ -14,7 +13,7 @@ Real RosenBrockFunction::value(const Array &x) const {
     return res;
 }
 
-Disposable<Array> RosenBrockFunction::values(const Array &x) const {
+Array RosenBrockFunction::values(const Array &x) const {
     QL_REQUIRE (x.size() == 2, "Rosenbrock function is 2-dim.");
 // irrelevant what you write in res for most of the optimizers
 // most of them are using value anyways . try with res [0]=100.0
